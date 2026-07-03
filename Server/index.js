@@ -7,7 +7,7 @@ const myserver = http.createServer((req,res)=>{
    
     fs.appendFile("log.txt", log , (err ,data) =>{
     switch(req.url){
-        case "/":
+        case "/": // /=>automatically goes to home page
             res.end("Home Page");
             break;
             case"/about":
@@ -20,10 +20,7 @@ const myserver = http.createServer((req,res)=>{
                         res.end("Error 404 Page Not Found");
                          };
                         });
-    // console.log(req.headers);
-
-
-    // console.log(req.headers);
+     // console.log(req.headers);
 });
 
     myserver.listen(8000,()=> console.log("Listening on port 8000..."));
